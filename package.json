@@ -1,0 +1,20 @@
+{
+  "name": "curso-tdd-node-clean",
+  "version": "1.0.0",
+  "author": "Erika Skarda",
+  "description": "Curso do Rodrigo Manguinhos typescript usando TDD, clean archtecture, Design Patterns e SOLID",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Erika-Skarda/curso-tdd-node-clean.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Erika-Skarda/curso-tdd-node-clean/issues"
+  },
+  "homepage": "https://github.com/Erika-Skarda/curso-tdd-node-clean#readme"
+}
