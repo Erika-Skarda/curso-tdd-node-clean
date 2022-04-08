@@ -5,8 +5,8 @@
   "description": "Curso do Rodrigo Manguinhos typescript usando TDD, clean archtecture, Design Patterns e SOLID",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:staged": "jest"
+    "test": "jest --passWithNoTests",
+    "test:staged": "jest --passWithNoTests"
   },
   "repository": {
     "type": "git",
