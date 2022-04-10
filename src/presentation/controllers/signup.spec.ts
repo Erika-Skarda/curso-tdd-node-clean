@@ -1,8 +1,10 @@
 import { SignUpController } from './signup'
 import { EmailValidator } from '../protocols/email-validator'
-import { MissingParamError } from '../errors/missing-param-error'
-import { InvalidParamError } from '../errors/invalid-param-error'
-import { ServerError } from '../errors/server-error'
+import { 
+  MissingParamError, 
+  InvalidParamError, 
+  ServerError 
+} from '../errors'
 
 interface SutTypes {
   sut: SignUpController
@@ -126,7 +128,6 @@ describe('SignUp Controller', () => {
     }
     const emailValidatorStub = new EmailValidatorStub() 
     const sut = new SignUpController(emailValidatorStub)
-    jest.spyOn(emailValidatorStub, 'isValid').mockReturnValueOnce(false)
     
     const httpRequest = {
       body: { 
@@ -135,7 +136,7 @@ describe('SignUp Controller', () => {
         password: 'any_password',
         passwordConfirmation: 'any_password_confirmation'
       }
-    } // função pra validar o request e retornar um res
+    } 
     const httpResponse = sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(500)
     expect(httpResponse.body).toEqual(new ServerError())
