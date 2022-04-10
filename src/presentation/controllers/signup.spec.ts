@@ -44,7 +44,7 @@ describe('SignUp Controller', () => {
     const { sut } = makeSut() // sut system under test => pra identificar quem estamos testando
     const httpRequest = {
       body: { 
-        name: 'any_email@email.com',
+        name: 'any_name',
         password: 'any_password',
         passwordConfirmation: 'any_password_confirmation'
       }
@@ -58,7 +58,7 @@ describe('SignUp Controller', () => {
     const { sut } = makeSut() // sut system under test => pra identificar quem estamos testando
     const httpRequest = {
       body: { 
-        name: 'any_email@email.com',
+        name: 'any_name',
         email: 'any_email@email.com',
         password_confirmation: 'any_password_confirmation'
       }
@@ -72,7 +72,7 @@ describe('SignUp Controller', () => {
     const { sut } = makeSut() // sut system under test => pra identificar quem estamos testando
     const httpRequest = {
       body: { 
-        name: 'any_email@email.com',
+        name: 'any_name',
         email: 'any_email@email.com',
         password: 'any_password',
       }
@@ -90,8 +90,8 @@ describe('SignUp Controller', () => {
     
     const httpRequest = {
       body: { 
-        name: 'any_email@email.com',
-        email: 'invalid_email@email.com',
+        name: 'any_name',
+        email: 'any_email@email.com',
         password: 'any_password',
         passwordConfirmation: 'any_password_confirmation'
       }
@@ -99,5 +99,21 @@ describe('SignUp Controller', () => {
     const httpResponse = sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
     expect(httpResponse.body).toEqual(new InvalidParamError('email'))
+  })
+
+  test('Should call EmailValidator with correct email', () => {
+    const { sut, emailValidatorStub } = makeSut() 
+    const isValidSpy = jest.spyOn(emailValidatorStub, 'isValid')
+    const email = 'any_email@email.com'
+    const httpRequest = {
+      body: { 
+        name: 'any_name',
+        email: email,
+        password: 'any_password',
+        passwordConfirmation: 'any_password_confirmation'
+      }
+    } // função pra validar o request e retornar um res
+    sut.handle(httpRequest)
+    expect(isValidSpy).toHaveBeenLastCalledWith(email)
   })
 })
