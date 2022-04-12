@@ -77,7 +77,7 @@ describe('SignUp Controller', () => {
       body: { 
         name: 'any_name',
         email: 'any_email@email.com',
-        password_confirmation: 'any_password_confirmation'
+        passwordConfirmation: 'any_password_confirmation'
       }
     } // função pra validar o request e retornar um res
     const httpResponse = sut.handle(httpRequest)
@@ -99,6 +99,22 @@ describe('SignUp Controller', () => {
     expect(httpResponse.body).toEqual(new MissingParamError('passwordConfirmation'))
   })
 
+  test('Should return 400 if no password confirmation fails', () => {
+    const { sut } = makeSut() 
+
+    const httpRequest = {
+      body: { 
+        name: 'any_name',
+        email: 'any_email@email.com',
+        password: 'any_password',
+        passwordConfirmation: 'invalid_password'
+      }
+    } 
+    const httpResponse = sut.handle(httpRequest)
+    expect(httpResponse.statusCode).toBe(400)
+    expect(httpResponse.body).toEqual(new InvalidParamError('passwordConfirmation'))
+  })
+  
   test('Should return 400 if invalid email is provided', () => {
     const { sut, emailValidatorStub } = makeSut() // sut system under test => pra identificar quem estamos testando
     // mockar um retorno, no caso mockamos como falso 
@@ -110,9 +126,9 @@ describe('SignUp Controller', () => {
         name: 'any_name',
         email: 'invalid_email@email.com',
         password: 'any_password',
-        passwordConfirmation: 'any_password_confirmation'
+        passwordConfirmation: 'any_password'
       }
-    } // função pra validar o request e retornar um res
+    } 
     const httpResponse = sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
     expect(httpResponse.body).toEqual(new InvalidParamError('email'))
@@ -121,24 +137,25 @@ describe('SignUp Controller', () => {
   test('Should call EmailValidator with correct email', () => {
     const { sut, emailValidatorStub } = makeSut() 
     const isValidSpy = jest.spyOn(emailValidatorStub, 'isValid')
+    
     const email = 'any_email@email.com'
     const httpRequest = {
       body: { 
         name: 'any_name',
         email: email,
         password: 'any_password',
-        passwordConfirmation: 'any_password_confirmation'
+        passwordConfirmation: 'any_password'
       }
-    } // função pra validar o request e retornar um res
+    } 
     sut.handle(httpRequest)
-    expect(isValidSpy).toHaveBeenLastCalledWith(email)
+    expect(isValidSpy).toHaveBeenCalledWith(email)
   })
 
   test('Should return 500 if EmailValidator throws', () => {
    const { sut, emailValidatorStub } = makeSut()
 
    jest.spyOn(emailValidatorStub, 'isValid').mockImplementationOnce(() => {
-     throw new Error
+     throw new Error()
    })
     
     const httpRequest = {
@@ -146,7 +163,7 @@ describe('SignUp Controller', () => {
         name: 'any_name',
         email: 'any_email@email.com',
         password: 'any_password',
-        passwordConfirmation: 'any_password_confirmation'
+        passwordConfirmation: 'any_password'
       }
     } 
     const httpResponse = sut.handle(httpRequest)
