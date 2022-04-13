@@ -236,6 +236,27 @@ describe('SignUp Controller', () => {
      const httpResponse = sut.handle(httpRequest)
      expect(httpResponse.statusCode).toBe(500)
      expect(httpResponse.body).toEqual(new ServerError())
-   })
+  })
+
+  test('Should return 200 if valid data is provided', () => {
+    const { sut, emailValidatorStub } = makeSut() 
+    // Não precisa de mock porque já retornam positivo por default
+    const httpRequest = {
+      body: { 
+        name: 'valis_name',
+        email: 'valid_email@email.com',
+        password: 'valid_password',
+        passwordConfirmation: 'valid_password'
+      }
+    } 
+    const httpResponse = sut.handle(httpRequest)
+    expect(httpResponse.statusCode).toBe(400)
+    expect(httpResponse.body).toEqual({
+      id: 'valid_id',
+      name: 'valid_name',
+      email: 'valid_email@email.com',
+      password: 'valid_password'
+    })
+  })
   
 })
