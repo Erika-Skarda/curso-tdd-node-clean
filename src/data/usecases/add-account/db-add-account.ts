@@ -21,11 +21,11 @@ export class DbAddAccount implements AddAccount {
     const hashedPassword = await this.encrypter.encrypt(accountData.password)
     // copia todo accountData e altera a opção password, 
     //o {} garante o original vou criar obj novo e inserir tudo que tinha e no accountData + hashed password
-    await this.addAccountRepository.add(Object.assign(
+    const account = await this.addAccountRepository.add(Object.assign(
       {},
       accountData, 
       { password: hashedPassword }
     ))
-    return new Promise(resolve => resolve(null))
+    return account
   }
 }
