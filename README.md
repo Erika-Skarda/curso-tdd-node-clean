@@ -9,6 +9,20 @@ Link do curso **[AQUI](https://www.udemy.com/course/tdd-com-mango/)**
 
 A intenção deu estudar esse curso é com total objetivo de aprender mais conceitos aprofundados sobre TDD e Clean Code. Uma vez que, tenho como objetivo aprender conceitos de Arquitetura de Software. 
 
+<div align="center">
+ <img alt="NodeJS" src="https://img.shields.io/badge/node.js-%2343853D.svg?style=for-the-badge&logo=node-dot-js&logoColor=white"/>
+ <img alt="TypeScript" src="https://img.shields.io/badge/typescript-%23323330.svg?style=for-the-badge&logo=typescript&logoColor=%23F7DF1E"/>
+</div>
+</br>   
+<div align="center">
+ <img alt="MongoDB" src ="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white"/>
+  <img alt="Jest" src ="https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white"/>
+</div>
+
+</br> 
+> Status do curso: Em andamento :heavy_check_mark: 
+</br> 
+
 ## 🚀 Recursos Utilizados 
 
 * **[TypeScript](https://www.typescriptlang.org/download)**
@@ -16,6 +30,24 @@ A intenção deu estudar esse curso é com total objetivo de aprender mais conce
 * **[Node.js](https://nodejs.org/en/)**
 * **[Postman](https://www.getpostman.com/)**
 * **[Extensão Visual Studio Code - Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner&WT.mc_id=javascript-14034-gllemos)**
+
+## :books: Linguagens, dependencias e libs utilizadas 
+
+- [Node](https://nodejs.org/en/)
+- [Typescript](https://www.typescriptlang.org/)
+- [bcrypt](https://www.npmjs.com/package/bcryptjs)
+- [dotenv](https://www.npmjs.com/package/dotenv)
+- [jest](https://jestjs.io/)
+- [jest-mongodb](https://github.com/shelfio/jest-mongodb)
+ -[mongodb](https://www.mongodb.com/languages/javascript/mongodb-and-npm-tutorial) 
+ 
+## Pré-requisitos
+
+:warning: [MongoDB](https://www.mongodb.com/)
+
+:warning: [Node](https://nodejs.org/en/download/)
+
+:warning: [Npm](https://www.npmjs.com/)
 
 ## 📕 Ementa do Curso
 
@@ -64,7 +96,7 @@ o request
 <details><summary><b>Módulo 06: SignUp API - Infra Layer</b></summary>
 
 - [x] 1.15 - Criando o BcryptAdapter e mockando o bcrypt
-- [] 1.16 - Configurando MongoDb em memória
+- [x] 1.16 - Configurando MongoDb em memória
 - [] 1.17 - Testando o MongoDb
 
 
