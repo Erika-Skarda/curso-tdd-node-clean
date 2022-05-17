@@ -11,16 +11,14 @@ A intenção deu estudar esse curso é com total objetivo de aprender mais conce
 
 <div align="center">
  <img alt="NodeJS" src="https://img.shields.io/badge/node.js-%2343853D.svg?style=for-the-badge&logo=node-dot-js&logoColor=white"/>
- <img alt="TypeScript" src="https://img.shields.io/badge/typescript-%23323330.svg?style=for-the-badge&logo=typescript&logoColor=%23F7DF1E"/>
-</div>
-</br>   
-<div align="center">
+ <img alt="TypeScript" src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"/>
  <img alt="MongoDB" src ="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white"/>
   <img alt="Jest" src ="https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white"/>
 </div>
+</br>   
 
 </br> 
-> Status do curso: Em andamento :heavy_check_mark: 
+> Status do curso: Em andamento ⚠️
 </br> 
 
 ## 🚀 Recursos Utilizados 
@@ -40,7 +38,7 @@ A intenção deu estudar esse curso é com total objetivo de aprender mais conce
 - [jest](https://jestjs.io/)
 - [jest-mongodb](https://github.com/shelfio/jest-mongodb)
  -[mongodb](https://www.mongodb.com/languages/javascript/mongodb-and-npm-tutorial) 
- 
+
 ## Pré-requisitos
 
 :warning: [MongoDB](https://www.mongodb.com/)
