@@ -36,8 +36,8 @@ A intenção deu estudar esse curso é com total objetivo de aprender mais conce
 - [bcrypt](https://www.npmjs.com/package/bcryptjs)
 - [dotenv](https://www.npmjs.com/package/dotenv)
 - [jest](https://jestjs.io/)
-- [jest-mongodb](https://github.com/shelfio/jest-mongodb)
- -[mongodb](https://www.mongodb.com/languages/javascript/mongodb-and-npm-tutorial) 
+- [jest-mongodb](https://www.npmjs.com/package/@shelf/jest-mongodb)
+ -[mongodb](https://www.npmjs.com/package/mongodb) 
 
 ## Pré-requisitos
 
@@ -95,7 +95,7 @@ o request
 
 - [x] 1.15 - Criando o BcryptAdapter e mockando o bcrypt
 - [x] 1.16 - Configurando MongoDb em memória
-- [] 1.17 - Testando o MongoDb
+- [x] 1.17 - Testando o MongoDb
 
 
 </details>
