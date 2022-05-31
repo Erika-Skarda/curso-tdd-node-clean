@@ -38,6 +38,7 @@ A intenção deu estudar esse curso é com total objetivo de aprender mais conce
 - [jest](https://jestjs.io/)
 - [jest-mongodb](https://www.npmjs.com/package/@shelf/jest-mongodb)
  -[mongodb](https://www.npmjs.com/package/mongodb) 
+-[sucrase](https://www.npmjs.com/package/sucrase)
 
 ## Pré-requisitos
 
@@ -97,6 +98,26 @@ o request
 - [x] 1.16 - Configurando MongoDb em memória
 - [x] 1.17 - Testando o MongoDb
 
+
+</details>
+
+<details><summary><b>Módulo 07: SignUp API - Main Layer</b></summary>
+
+- [] 1.18 - Testando middlewares do express
+- [] 1.19 - Criando teste de integração para o SignUp
+- [] 1.20 - Fazendo a composição do SignUp e desacoplando do express
+
+
+</details>
+
+<details><summary><b>Módulo 08: Log de Erro</b></summary>
+
+- [] 1.21 - Testando a conexão com o MongoDb
+- [] 1.22 - Aplicando o Design Pattern Decorator
+- [] 1.23 - Adicionando Log de Erro
+- [] 1.24 - Refatorando os testes
+- [] 1.25 - Persistindo Log de Erro no MongoDb
+- [] 1.26 - Criando Tag e fazendo Push para o GitHub
 
 </details>
 
